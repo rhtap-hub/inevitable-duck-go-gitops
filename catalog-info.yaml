@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: inevitable-duck-go-gitops
+  description: This is GitOps manifest for inevitable-duck-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: inevitable-duck-go
+    janus-idp.io/tekton: inevitable-duck-go 
+    backstage.io/kubernetes-id: inevitable-duck-go 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:inevitable-duck-go
